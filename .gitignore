@@ -11,7 +11,7 @@ dist/
 /content/
 /icons/
 /popup.*
-*.png
+/*.png
 
 # 编辑器和 IDE
 .vscode/

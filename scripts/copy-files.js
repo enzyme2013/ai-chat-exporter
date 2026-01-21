@@ -31,11 +31,13 @@ fs.readdirSync('src/content').forEach(file => {
 })
 
 // 复制 icons
-if (!fs.existsSync('icons')) {
-  fs.mkdirSync('icons', { recursive: true })
+if (fs.existsSync('src/icons')) {
+  if (!fs.existsSync('icons')) {
+    fs.mkdirSync('icons', { recursive: true })
+  }
+  fs.readdirSync('src/icons').forEach(file => {
+    copyRecursive(path.join('src/icons', file), path.join('icons', file))
+  })
 }
-fs.readdirSync('src/icons').forEach(file => {
-  copyRecursive(path.join('src/icons', file), path.join('icons', file))
-})
 
 console.log('✓ Files copied from src/ to root directory')
