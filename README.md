@@ -6,6 +6,7 @@
 
 - ✅ 支持 Gemini 聊天记录导出
 - ✅ 支持 DeepSeek 聊天记录导出
+- ✅ 支持 ChatGPT 聊天记录导出
 - 🚧 更多平台计划中
 
 ## 安装方法
@@ -54,6 +55,13 @@
 4. 点击"导出 Markdown"按钮
 5. 选择保存位置
 
+### ChatGPT
+1. 登录 [ChatGPT](https://chatgpt.com)
+2. 打开一个聊天会话
+3. 点击浏览器工具栏中的扩展图标
+4. 点击"导出 Markdown"按钮
+5. 选择保存位置
+
 ## 项目结构
 
 ```
@@ -64,7 +72,8 @@ ai-chat-exporter/
 │   ├── popup.js          # 弹窗逻辑
 │   ├── content/          # 内容脚本
 │   │   ├── gemini.js     # Gemini 页面脚本
-│   │   └── deepseek.js   # DeepSeek 页面脚本
+│   │   ├── deepseek.js   # DeepSeek 页面脚本
+│   │   └── chatgpt.js    # ChatGPT 页面脚本
 │   └── icons/            # 扩展图标
 ├── dist/                 # 构建输出目录（自动生成）
 ├── package.json          # 项目配置和依赖
@@ -158,6 +167,7 @@ npm run build:zip
 ## 开发计划
 
 - [x] DeepSeek 支持
+- [x] ChatGPT 支持
 - [ ] Claude 支持
 - [ ] 批量导出会话
 - [ ] 更多导出格式（JSON、HTML、PDF）

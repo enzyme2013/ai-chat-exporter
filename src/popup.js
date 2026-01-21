@@ -165,6 +165,9 @@ class Exporter {
     if (url.includes('chat.deepseek.com')) {
       return { name: 'DeepSeek', scriptFile: 'content/deepseek.js' };
     }
+    if (url.includes('chatgpt.com')) {
+      return { name: 'ChatGPT', scriptFile: 'content/chatgpt.js' };
+    }
     return null;
   }
 

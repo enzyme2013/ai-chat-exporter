@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "导出 Gemini、DeepSeek 等 AI 聊天记录为 Markdown",
   "permissions": ["activeTab", "scripting", "downloads"],
-  "host_permissions": ["https://gemini.google.com/*", "https://chat.deepseek.com/*"],
+  "host_permissions": ["https://gemini.google.com/*", "https://chat.deepseek.com/*", "https://chatgpt.com/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -22,6 +22,11 @@
     {
       "matches": ["https://chat.deepseek.com/*"],
       "js": ["content/deepseek.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content/chatgpt.js"],
       "run_at": "document_idle"
     }
   ]
