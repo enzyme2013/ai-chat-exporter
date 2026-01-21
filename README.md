@@ -116,6 +116,36 @@ npm run build:zip
 
 将在项目根目录生成 `ai-chat-exporter-v{version}.zip` 文件。
 
+## 发布流程
+
+本项目使用 GitHub Actions 自动化发布流程：
+
+### 创建新版本
+
+1. 更新 `package.json` 中的版本号
+2. 提交变更：`git commit -am "chore: bump version to x.x.x"`
+3. 推送到 GitHub：`git push`
+4. 创建并推送版本标签：
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+
+### 自动化构建
+
+推送标签后，GitHub Actions 将自动：
+- ✅ 构建扩展
+- ✅ 打包为 zip 文件
+- ✅ 创建 GitHub Release
+- ✅ 上传构建产物到 Release
+
+用户即可在 [Releases](../../releases) 页面下载最新版本。
+
+### CI/CD
+
+- **CI**: 每次 push 和 pull request 都会自动运行构建测试
+- **Release**: 推送 `v*.*.*` 标签时自动创建 Release
+
 ## 导出格式
 
 导出的 Markdown 文件包含：
