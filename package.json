@@ -1,6 +1,6 @@
 {
   "name": "ai-chat-exporter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "导出 Gemini、DeepSeek 等 AI 聊天记录为 Markdown 的浏览器扩展",
   "type": "module",
   "scripts": {
