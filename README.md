@@ -2,177 +2,155 @@
 
 AI Chat Exporter - Browser extension to export and save chat history from ChatGPT, Gemini, DeepSeek to Markdown. Download conversations with formatting, code blocks, and structure preserved.
 
-## 当前功能
+## Features
 
-- ✅ 支持 Gemini 聊天记录导出
-- ✅ 支持 DeepSeek 聊天记录导出
-- ✅ 支持 ChatGPT 聊天记录导出
-- 🚧 更多平台计划中
+- ✅ Support for Gemini chat history export
+- ✅ Support for DeepSeek chat history export
+- ✅ Support for ChatGPT chat history export
+- 🚧 More platforms coming soon
 
-## 安装方法
+## Installation
 
-### 从发布版本安装（推荐用户）
+### From Release (Recommended for Users)
 
-1. 在 [Releases](../../releases) 页面下载最新版本的 `.zip` 文件
-2. 解压缩下载的文件
-3. 打开浏览器，进入 `chrome://extensions/`
-4. 开启右上角的"开发者模式"
-5. 点击"加载已解压的扩展程序"
-6. 选择解压后的文件夹
+1. Download the latest `.zip` file from the [Releases](../../releases) page
+2. Extract the downloaded file
+3. Open your browser and navigate to `chrome://extensions/`
+4. Enable "Developer mode" in the top right corner
+5. Click "Load unpacked"
+6. Select the extracted folder
 
-### Chrome / Edge（从源码）
+### Chrome / Edge (From Source)
 
-1. 克隆此仓库
-2. 安装依赖：`npm install`
-3. 构建扩展：`npm run build`
-4. 打开浏览器，进入 `chrome://extensions/`
-5. 开启右上角的"开发者模式"
-6. 点击"加载已解压的扩展程序"
-7. 选择 `dist` 文件夹
+1. Clone this repository
+2. Install dependencies: `npm install`
+3. Build the extension: `npm run build`
+4. Open your browser and navigate to `chrome://extensions/`
+5. Enable "Developer mode" in the top right corner
+6. Click "Load unpacked"
+7. Select the `dist` folder
 
 ### Firefox
 
-1. 克隆此仓库
-2. 安装依赖：`npm install`
-3. 构建扩展：`npm run build`
-4. 打开浏览器，进入 `about:debugging#/runtime/this-firefox`
-5. 点击"临时加载附加组件"
-6. 选择 `dist` 文件夹中的 `manifest.json`
+1. Clone this repository
+2. Install dependencies: `npm install`
+3. Build the extension: `npm run build`
+4. Open your browser and navigate to `about:debugging#/runtime/this-firefox`
+5. Click "Load Temporary Add-on"
+6. Select the `manifest.json` file inside the `dist` folder
 
-## 使用方法
+## Usage
 
 ### Gemini
-1. 登录 [Gemini](https://gemini.google.com)
-2. 打开一个聊天会话
-3. 点击浏览器工具栏中的扩展图标
-4. 点击"导出 Markdown"按钮
-5. 选择保存位置
+
+1. Login to [Gemini](https://gemini.google.com)
+2. Open a chat conversation
+3. Click the extension icon in your browser toolbar
+4. Click "Export Markdown" button
+5. Choose a location to save the file
 
 ### DeepSeek
-1. 登录 [DeepSeek](https://chat.deepseek.com)
-2. 打开一个聊天会话
-3. 点击浏览器工具栏中的扩展图标
-4. 点击"导出 Markdown"按钮
-5. 选择保存位置
+
+1. Login to [DeepSeek](https://chat.deepseek.com)
+2. Open a chat conversation
+3. Click the extension icon in your browser toolbar
+4. Click "Export Markdown" button
+5. Choose a location to save the file
 
 ### ChatGPT
-1. 登录 [ChatGPT](https://chatgpt.com)
-2. 打开一个聊天会话
-3. 点击浏览器工具栏中的扩展图标
-4. 点击"导出 Markdown"按钮
-5. 选择保存位置
 
-## 项目结构
+1. Login to [ChatGPT](https://chatgpt.com)
+2. Open a chat conversation
+3. Click the extension icon in your browser toolbar
+4. Click "Export Markdown" button
+5. Choose a location to save the file
+
+## Project Structure
 
 ```
 ai-chat-exporter/
-├── src/                  # 源代码目录
-│   ├── manifest.json     # 扩展配置文件
-│   ├── popup.html        # 弹窗界面
-│   ├── popup.js          # 弹窗逻辑
-│   ├── content/          # 内容脚本
-│   │   ├── gemini.js     # Gemini 页面脚本
-│   │   ├── deepseek.js   # DeepSeek 页面脚本
-│   │   └── chatgpt.js    # ChatGPT 页面脚本
-│   └── icons/            # 扩展图标
-├── dist/                 # 构建输出目录（自动生成）
-├── package.json          # 项目配置和依赖
-├── vite.config.js        # Vite 构建配置
-├── .gitignore            # Git 忽略文件
-├── CLAUDE.md             # 开发指南
-└── README.md             # 项目说明
+├── src/                  # Source code directory
+│   ├── manifest.json     # Extension configuration file
+│   ├── popup.html        # Popup interface
+│   ├── popup.js          # Popup logic
+│   ├── content/          # Content scripts
+│   │   ├── gemini.js     # Gemini page script
+│   │   ├── deepseek.js   # DeepSeek page script
+│   │   └── chatgpt.js    # ChatGPT page script
+│   └── icons/            # Extension icons
+├── dist/                 # Build output directory (auto-generated)
+├── package.json          # Project configuration and dependencies
+├── vite.config.js        # Vite build configuration
+├── .gitignore            # Git ignore file
+├── CLAUDE.md             # Developer guide
+└── README.md             # Project documentation
 ```
 
-## 开发
+## Development
 
-### 前置要求
+### Prerequisites
 
-- Node.js 18+ 和 npm
+- Node.js 18+ and npm
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 开发模式
+### Development Mode
 
-启动开发服务器，支持热更新：
+Start the development server with hot-reload:
 
 ```bash
 npm run dev
 ```
 
-然后在浏览器中加载 `dist` 文件夹作为未打包的扩展。修改源代码后会自动重新构建。
+Then load the `dist` folder as an unpacked extension in your browser. The extension will automatically rebuild when you modify source code.
 
-### 构建
+### Build
 
-构建生产版本：
+Build for production:
 
 ```bash
 npm run build
 ```
 
-构建产物将输出到 `dist/` 目录。
+Build artifacts will be output to the `dist/` directory.
 
-### 打包
+### Package
 
-打包为 `.zip` 文件（用于发布）：
+Package as a `.zip` file (for release):
 
 ```bash
 npm run build:zip
 ```
 
-将在项目根目录生成 `ai-chat-exporter-v{version}.zip` 文件。
+This will generate an `ai-chat-exporter-v{version}.zip` file in the project root directory.
 
-## 发布流程
+## Export Format
 
-本项目使用 GitHub Actions 自动化发布流程：
+Exported Markdown files include:
 
-### 创建新版本
+- Conversation title
+- Platform information
+- Export timestamp
+- Complete conversation history (user messages marked with 👤, AI responses marked with 🤖)
 
-1. 更新 `package.json` 中的版本号
-2. 提交变更：`git commit -am "chore: bump version to x.x.x"`
-3. 推送到 GitHub：`git push`
-4. 创建并推送版本标签：
-   ```bash
-   git tag v1.0.0
-   git push origin v1.0.0
-   ```
+## Roadmap
 
-### 自动化构建
+- [x] DeepSeek support
+- [x] ChatGPT support
+- [ ] Claude support
+- [ ] Batch conversation export
+- [ ] More export formats (JSON, HTML, PDF)
+- [ ] Export history tracking
 
-推送标签后，GitHub Actions 将自动：
-- ✅ 构建扩展
-- ✅ 打包为 zip 文件
-- ✅ 创建 GitHub Release
-- ✅ 上传构建产物到 Release
-
-用户即可在 [Releases](../../releases) 页面下载最新版本。
-
-### CI/CD
-
-- **CI**: 每次 push 和 pull request 都会自动运行构建测试
-- **Release**: 推送 `v*.*.*` 标签时自动创建 Release
-
-## 导出格式
-
-导出的 Markdown 文件包含：
-
-- 会话标题
-- 平台信息
-- 导出时间
-- 完整对话记录（用户消息用 👤 标识，AI 回复用 🤖 标识）
-
-## 开发计划
-
-- [x] DeepSeek 支持
-- [x] ChatGPT 支持
-- [ ] Claude 支持
-- [ ] 批量导出会话
-- [ ] 更多导出格式（JSON、HTML、PDF）
-- [ ] 导出历史记录
-
-## 许可证
+## License
 
 MIT License
+
+## 🌎 国际化 / Internationalization
+
+- **[English](README.md)** (This file)
+- **[简体中文](README.zh-CN.md)**
