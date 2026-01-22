@@ -1,7 +1,7 @@
 {
   "name": "ai-chat-exporter",
   "version": "0.2.0",
-  "description": "导出 Gemini、DeepSeek 等 AI 聊天记录为 Markdown 的浏览器扩展",
+  "description": "AI Chat Exporter - Browser extension to export and save chat history from ChatGPT, Gemini, DeepSeek to Markdown. Download conversations with formatting, code blocks, and structure preserved.",
   "type": "module",
   "scripts": {
     "predev": "node scripts/copy-files.js",
@@ -15,10 +15,15 @@
     "chrome-extension",
     "browser-extension",
     "ai-chat",
-    "export",
-    "markdown",
+    "chatgpt",
     "gemini",
-    "deepseek"
+    "deepseek",
+    "export",
+    "chat-history",
+    "markdown",
+    "save-conversations",
+    "download-chat",
+    "ai-platform"
   ],
   "author": "",
   "license": "MIT",

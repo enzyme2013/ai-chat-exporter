@@ -1,6 +1,6 @@
 # AI Chat Exporter
 
-导出 Gemini、DeepSeek 等 AI 聊天平台记录为 Markdown 文件的浏览器扩展。
+AI Chat Exporter - Browser extension to export and save chat history from ChatGPT, Gemini, DeepSeek to Markdown. Download conversations with formatting, code blocks, and structure preserved.
 
 ## 当前功能
 
